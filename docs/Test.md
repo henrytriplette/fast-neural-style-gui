@@ -1,0 +1,1 @@
+python3 neural_style.py eval --model "D:/Sites/triplette-neural-style-fast/test/mosaic.pth" --content-image "D:/Sites/triplette-neural-style-fast/test/wallhaven-nz1wko.jpg" --output-image "D:/Sites/triplette-neural-style-fast/test/output_2019-10-23_16.12.27_single.png" --cuda 1

@@ -1,0 +1,15 @@
+*.swp
+out*.png
+*.png
+*.jpg
+*.pyc
+*.pth
+models/
+!models/download_models.py
+
+venv/*
+
+results/*
+examples/*
+training/*
+temp/*
