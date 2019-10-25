@@ -15,7 +15,7 @@ def main():
             [sg.Text('Selected GPU', size=(15, 1)), sg.InputText('1', key='cuda')],
             [sg.Button('Style', key='eval')],
             [sg.Text('_' * 80)],
-            [sg.Text('Dataset Directory', size=(15, 1)), sg.InputText('D:/Neural Networks Training Sets/ImaginaryFashion', key='dataset'), sg.FolderBrowse()],
+            [sg.Text('Dataset Directory', size=(15, 1)), sg.InputText('D:/Neural Networks Training Sets/NSFWfashion', key='dataset'), sg.FolderBrowse()],
             [sg.Text('Style Image', size=(15, 1)), sg.Input(key='style_image'), sg.FileBrowse(file_types=(('Images', '*.jpg'),('PNG', '*.png')))],
             [sg.Text('Save Model Directory', size=(15, 1)), sg.InputText(key='save_model_dir'), sg.FolderBrowse()],
             [sg.Text('Epochs ', size=(15, 1)), sg.InputText('2', key='epochs')],
@@ -68,6 +68,9 @@ def main():
             neural_style.check_paths(args)
             neural_style.train(args)
 
+            single_datestring = datetime.strftime(datetime.now(), '%Y-%m-%d_%H.%M.%S')
+            sg.Popup('Completed', 'Training completed at ' + single_datestring)
+
         if event == 'eval':
 
             # Set output filename
@@ -90,7 +93,8 @@ def main():
             args = utility.dotdict(args)
             neural_style.stylize(args)
 
-            sg.Popup('Completed', 'Style transfer completed')
+            single_datestring = datetime.strftime(datetime.now(), '%Y-%m-%d_%H.%M.%S')
+            sg.Popup('Completed', 'Style transfer completed at ' + single_datestring)
 
 
     window.Close()   # Don't forget to close your window!

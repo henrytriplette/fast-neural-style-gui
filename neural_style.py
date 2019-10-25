@@ -112,7 +112,7 @@ def train(args):
     # save model
     transformer.eval().cpu()
     save_model_filename = "epoch_" + str(args.epochs) + "_" + str(time.ctime()).replace(' ', '_').replace(':', '_') + "_" + str(
-        args.content_weight) + "_" + str(args.style_weight) + ".model"
+        args.content_weight) + "_" + str(args.style_weight) + ".pth"
     save_model_path = os.path.join(args.save_model_dir, save_model_filename)
     torch.save(transformer.state_dict(), save_model_path)
 
@@ -120,8 +120,6 @@ def train(args):
 
 
 def stylize(args):
-
-    print(args.content_image)
     device = torch.device("cuda" if args.cuda else "cpu")
 
     content_image = utils.load_image(args.content_image, scale=args.content_scale)
