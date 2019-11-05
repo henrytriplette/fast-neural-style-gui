@@ -13,7 +13,7 @@ def main():
             [sg.Text('Output Directory', size=(15, 1)), sg.InputText(key='output_image'), sg.FolderBrowse()],
             [sg.Text('Output Size', size=(15, 1)), sg.InputText('2048', key='image_size')],
             [sg.Text('Selected GPU', size=(15, 1)), sg.InputText('1', key='cuda')],
-            [sg.Button('Style', key='eval')],
+            [sg.Button('Run Style', key='eval')],
             [sg.Text('_' * 80)],
             [sg.Text('Dataset Directory', size=(15, 1)), sg.InputText('D:/Neural Networks Training Sets/NSFWfashion', key='dataset'), sg.FolderBrowse()],
             [sg.Text('Style Image', size=(15, 1)), sg.Input(key='style_image'), sg.FileBrowse(file_types=(('Images', '*.jpg'),('PNG', '*.png')))],
@@ -22,7 +22,7 @@ def main():
             [sg.Text('Seed ', size=(15, 1)), sg.InputText('123', key='seed')],
             [sg.Text('Batch Size ', size=(15, 1)), sg.InputText('1', key='batch_size')],
             [sg.Text('Selected Train GPU', size=(15, 1)), sg.InputText('1', key='cuda_train')],
-            [sg.Button('Train', key='train')],
+            [sg.Button('Train Model', key='train')],
             [sg.Text('_' * 80)],
             [sg.Cancel(key='quit')],
              ]
